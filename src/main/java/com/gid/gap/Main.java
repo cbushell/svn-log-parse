@@ -15,6 +15,7 @@ public class Main {
 		digester.addObjectCreate("log", Log.class);
 
 		digester.addObjectCreate("log/logentry", LogEntry.class);
+		digester.addBeanPropertySetter("log/logentry/date", "date");
 		digester.addSetNext("log/logentry", "addLogEntry");
 
 		digester.addObjectCreate("log/logentry/paths", Paths.class);
@@ -25,8 +26,10 @@ public class Main {
 		digester.addBeanPropertySetter("log/logentry/paths/path", "path");
 		digester.addSetNext("log/logentry/paths/path", "addPath");
 
-		Log svnLog = (Log) digester.parse(new File(
+		Log log = (Log) digester.parse(new File(
 				"/Users/cbushell/Dropbox/dev/svn-metrics/data/svn_dump.log"));
+		
+		
 	}
 
 }
