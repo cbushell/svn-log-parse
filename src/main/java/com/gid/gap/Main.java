@@ -28,8 +28,6 @@ public class Main {
 
 		Log log = (Log) digester.parse(new File(
 				"/Users/cbushell/Dropbox/dev/svn-metrics/data/svn_dump.log"));
-		
-		
 	}
 
 }
